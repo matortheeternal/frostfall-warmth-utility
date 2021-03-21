@@ -32,7 +32,7 @@ const
     'FrostfallExtraHeadCloth'#13
     'FrostfallExtraHeadWeatherproof'#13
     'FrostfallExtraHeadWarm';
-  VersionString = '0.3';
+  VersionString = '0.4';
   separator = '----------------------------------------';
 
 var
@@ -311,7 +311,7 @@ begin
   // initialization
   DefaultOptionsMXPF;
   InitializeMXPF;
-  mxSkipPatchFile := false;
+  mxSkipPatchedRecords := false;
   AddMessage('Loading resources');
   slWarmth := TStringList.Create;
   slFrostfallKeywords := TStringList.Create;
