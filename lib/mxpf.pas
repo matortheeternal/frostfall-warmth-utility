@@ -49,7 +49,7 @@ var
   mxInitialized, mxLoadCalled, mxCopyCalled, mxLoadMasterRecords, 
   mxLoadOverrideRecords, mxLoadWinningOverrides, mxMastersAdded,
   mxSkipPatchedRecords, mxDisallowNewFile, mxDisallowSaving, 
-  mxDisallowPrinting: boolean;
+  mxDisallowPrinting, mxSkipPatchFile: boolean;
   mxPatchFile: IInterface;
 
 //=========================================================================
@@ -149,6 +149,7 @@ begin
   mxLoadMasterRecords := true;
   mxSkipPatchedRecords := true;
   mxLoadWinningOverrides := true;
+  mxSkipPatchFile := true;
 end;
 
 procedure FinalizeMXPF;
@@ -323,7 +324,7 @@ begin
     filename := GetFileName(f);
     
     // skip patch file
-    if Assigned(mxPatchFile) then begin
+    if Assigned(mxPatchFile) and mxSkipPatchFile then begin
       if filename = GetFileName(mxPatchFile) then begin
         if mxDebug then DebugMessage('  Skipping patch file '+filename);
         break;
