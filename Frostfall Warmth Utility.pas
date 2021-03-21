@@ -241,6 +241,7 @@ begin
     panel := CreateEntryPanel(form, scrollbox, rec);
     entryList.Add(panel);
   end;
+  QuickLabel(form, scrollbox, MaxRecordIndex * 60 + 60, 1, 1, ' ');
 end;
 
 procedure LoadEntry(panel: TPanel);
