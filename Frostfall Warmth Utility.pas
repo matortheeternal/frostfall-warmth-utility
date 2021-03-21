@@ -311,7 +311,7 @@ begin
   // initialization
   DefaultOptionsMXPF;
   InitializeMXPF;
-  mxSkipPatchedRecords := false;
+  mxSkipPatchFile := false;
   AddMessage('Loading resources');
   slWarmth := TStringList.Create;
   slFrostfallKeywords := TStringList.Create;
